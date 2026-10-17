@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shree Aditya Geo Tech | Business Suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#09233c;--navy2:#123d62;--blue:#1456cf;--gold:#d9a321;--ink:#172235;--muted:#718096;--line:#dce4ed;--bg:#f3f6fa;--white:#fff;--green:#13875a;--red:#b42318}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}button,input,select{font:inherit}button{cursor:pointer}
+.hidden{display:none!important}.login-wrap{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);padding:20px;gap:20px}
+.hero{border-radius:22px;min-height:560px;padding:clamp(24px,5vw,64px);color:#fff;background:linear-gradient(145deg,#073a6c,#071b33);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 48px #0b24401c}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:64px;height:64px;object-fit:contain;border-radius:12px;background:white}.brand h1{font-size:clamp(20px,3vw,32px);margin:0;letter-spacing:-.04em}.brand p{margin:5px 0 0;color:#d7e6f7;font-size:12px}
+.hero h2{font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.045em;max-width:580px;margin:50px 0 18px}.hero .gold{color:#f2c55e}.hero-copy{max-width:440px;color:#dce8f6;line-height:1.7}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap}.pill{border:1px solid #ffffff38;background:#ffffff12;border-radius:999px;padding:9px 13px;font-size:12px}
+.login-card{align-self:center;justify-self:center;width:min(100%,430px);background:white;border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,42px);box-shadow:0 18px 50px #142b4410}.login-card h2{margin:0 0 8px;font-size:26px;letter-spacing:-.04em}.sub{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:24px}
+.field{display:grid;gap:7px;margin:15px 0}.field label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#536176}.field input,.field select{width:100%;border:1px solid #ccd6e2;border-radius:10px;padding:12px 13px;background:#fbfcfe;min-height:44px;outline:none}.field input:focus,.field select:focus{border-color:#5c8de8;box-shadow:0 0 0 3px #1456cf16}
+.btn{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:12px;font-weight:750;background:#fff;color:var(--ink)}.btn.primary{background:linear-gradient(135deg,#1456cf,#1746a7);border-color:#1456cf;color:white;box-shadow:0 7px 18px #1456cf28}.btn.subtle{background:#f2f6fb}.btn.danger{color:var(--red);background:#fff4f3;border-color:#f3cfca}.btn.block{width:100%;min-height:46px}.hint{font-size:11px;color:var(--muted);line-height:1.55}.notice{padding:11px 12px;border-radius:9px;background:#fff8e8;color:#805c08;font-size:12px;line-height:1.5;margin:12px 0}.notice.error{background:#fff1f0;color:#a12b22}.notice.ok{background:#eaf8f0;color:#166b43}
+.app{min-height:100vh;display:grid;grid-template-columns:252px minmax(0,1fr)}.sidebar{background:linear-gradient(180deg,#071c30,#0d2d49);color:white;padding:20px 14px;display:flex;flex-direction:column;gap:24px;min-height:100vh}.sidebrand{display:flex;gap:10px;align-items:center;padding:4px 8px 18px;border-bottom:1px solid #ffffff1b}.sidebrand img{width:43px;height:43px;object-fit:contain;background:white;border-radius:9px}.sidebrand b{font-size:13px;line-height:1.3}.sidebrand small{display:block;color:#b6ccdf;font-size:10px;margin-top:3px}.nav-label{font-size:9px;letter-spacing:.15em;color:#8da9c1;font-weight:800;padding:0 10px}.nav{display:grid;gap:5px}.nav button{width:100%;text-align:left;color:#c8d8e8;background:transparent;border:0;border-radius:9px;padding:12px 11px;font-size:12px;font-weight:650}.nav button.active,.nav button:hover{background:#1456cf;color:white}.sidefoot{margin-top:auto;padding:13px 10px;border-top:1px solid #ffffff1b;font-size:11px;color:#d4e1ef}.sidefoot span{display:block;color:#91adc5;font-size:10px;margin-top:5px}.main{min-width:0}.topbar{height:72px;background:#ffffffeb;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 26px;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.topbar h2{margin:0;font-size:18px;letter-spacing:-.035em}.topbar small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.user-actions{display:flex;align-items:center;gap:9px}.avatar{width:34px;height:34px;border-radius:10px;background:#e7efff;color:#1649ac;display:grid;place-items:center;font-size:12px;font-weight:850}.content{padding:26px;max-width:1600px;margin:auto}.welcome{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.welcome h1{margin:0;font-size:27px;letter-spacing:-.05em}.welcome p{margin:8px 0 0;color:var(--muted);font-size:13px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.stat,.module,.panel{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 5px 18px #18365308}.stat{padding:18px}.stat .label{font-size:11px;color:var(--muted);font-weight:650}.stat strong{display:block;font-size:25px;margin-top:10px;letter-spacing:-.04em}.stat small{font-size:10px;color:var(--muted)}.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}.module{padding:23px;display:flex;flex-direction:column;gap:12px;min-height:200px}.module-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#eaf1ff;color:#1551bf;font-size:20px}.module h3{margin:0;font-size:16px}.module p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.module .btn{align-self:flex-start;margin-top:auto}
+.panel{padding:20px;margin-top:18px}.panel h3{margin:0 0 6px;font-size:15px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #edf1f5;white-space:nowrap}th{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.05em;background:#f8fafc}.status{display:inline-block;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800;background:#eef2f7;color:#526174}.status.draft{background:#edf1f6}.status.pending{background:#fff2d6;color:#8b5a00}.status.approved,.status.completed{background:#e4f7ed;color:#137547}.status.rejected{background:#ffebea;color:#b42318}
+.editor-wrap{height:calc(100vh - 72px);min-height:520px;background:#e9eef5}.editor-wrap iframe{width:100%;height:100%;border:0;background:white}.permission-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.permission-card{border:1px solid var(--line);border-radius:12px;padding:15px}.permission-card h4{margin:0 0 12px}.checkrow{display:flex;align-items:center;gap:8px;font-size:12px;margin:10px 0}.checkrow input{accent-color:var(--blue)}.employee-form{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:18px}.employee-form .field{margin:0}.muted{color:var(--muted)}.mobile-nav{display:none}
+@media(max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.app{grid-template-columns:220px minmax(0,1fr)}.content{padding:20px}.topbar{padding:0 20px}}
+@media(max-width:720px){.employee-form{grid-template-columns:1fr}.login-wrap{grid-template-columns:1fr;padding:10px}.hero{min-height:300px;padding:24px}.hero h2{margin:25px 0 10px;font-size:34px}.hero-copy{font-size:12px}.hero .pill-row{display:none}.login-card{width:100%;padding:25px}.app{display:block}.sidebar{min-height:auto;padding:10px 12px;gap:10px;position:sticky;top:0;z-index:10}.sidebrand{padding:0 4px 8px;border:0}.sidebrand img{width:34px;height:34px}.nav-label,.sidefoot{display:none}.nav{display:flex;overflow:auto;gap:5px}.nav button{white-space:nowrap;width:auto;padding:10px}.topbar{height:auto;min-height:62px;padding:12px 15px}.topbar h2{font-size:15px}.topbar small{font-size:10px}.user-actions .user-email{display:none}.content{padding:15px}.welcome{align-items:start;flex-direction:column}.welcome h1{font-size:23px}.cards{gap:9px}.stat{padding:13px}.stat strong{font-size:21px}.module-grid,.permission-grid{grid-template-columns:1fr}.module{min-height:180px;padding:18px}.editor-wrap{height:calc(100dvh - 126px);min-height:480px}.panel{padding:14px}.table-wrap table{font-size:11px}}
+
+.module-permission-grid{display:grid;grid-template-columns:repeat(2,minmax(180px,1fr));gap:8px;min-width:380px}
+.module-permission{border:1px solid var(--line,#d8dee8);border-radius:8px;padding:7px;margin:0;min-width:0}
+.module-permission legend{font-size:11px;font-weight:750;padding:0 3px;white-space:normal}
+.module-permission .checkrow{display:inline-flex;margin:3px 7px 0 0;font-size:11px}
+#usersView .table-wrap{overflow:auto}
+#usersView table{min-width:1150px}
+@media(max-width:800px){.module-permission-grid{grid-template-columns:1fr;min-width:300px}}
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+</head><body>
+<section id="loginView" class="login-wrap">
+ <div class="hero"><div class="brand"><img src="assets/company-logo.jpg" alt="Company logo" onerror="this.hidden=true"><div><h1>SHREE ADITYA GEO TECH</h1><p>Surveying • Engineering • Documentation</p></div></div><div><h2>Precision in every <span class="gold">document.</span></h2><p class="hero-copy">One secure workspace for quotations, invoices and professional survey reports. Built for your team, from desktop to mobile.</p></div><div class="pill-row"><span class="pill">Invoice & Quotation</span><span class="pill">Survey Reports</span><span class="pill">Secure team access</span></div></div>
+ <form id="loginForm" class="login-card"><h2>Welcome back</h2><div class="sub">Sign in to your company workspace using your Supabase account.</div><div id="loginNotice" aria-live="polite"></div><div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="username" required placeholder="you@company.com"></div><div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Your password"></div><button class="btn primary block" type="submit">Sign in securely</button><p class="hint" style="margin-top:16px">Accounts must be created or invited by an administrator. This screen does not invent or display passwords.</p></form>
+</section>
+<section id="appView" class="app hidden">
+ <aside class="sidebar"><div class="sidebrand"><img src="assets/company-logo.jpg" alt=""><div><b>SHREE ADITYA GEO TECH</b><small>BUSINESS MANAGEMENT</small></div></div><div class="nav-label">WORKSPACE</div><nav class="nav" id="nav"><button data-view="dashboard" class="active">⌂ &nbsp; Dashboard</button><button data-view="documents">▤ &nbsp; Invoice / Quotation</button><button data-view="surveys">⌖ &nbsp; Survey Reports</button><div class="nav-label">BUSINESS MODULES</div><button data-view="clientPayments" data-module-nav="client_project_payments">₹ &nbsp; Client &amp; Project Payments</button><button data-view="attendance" data-module-nav="attendance">◷ &nbsp; Attendance</button><button data-view="leave" data-module-nav="leave">▣ &nbsp; Leave</button><button data-view="holidays" data-module-nav="holidays">☀ &nbsp; Holidays</button><button data-view="flatExpense" data-module-nav="flat_expense">⌂ &nbsp; Flat Expense</button><button data-view="officeExpense" data-module-nav="office_expense">▤ &nbsp; Office Expense</button><button data-view="payroll" data-module-nav="payroll">₹ &nbsp; Payroll</button><button data-view="payslip" data-module-nav="payslip">▧ &nbsp; Payslip</button><button data-view="users" id="usersNav" class="hidden">♙ &nbsp; Team permissions</button></nav><div class="sidefoot" id="sideUser">Signed in<span>Supabase Auth</span></div></aside>
+ <main class="main"><header class="topbar"><div><h2 id="pageTitle">Dashboard</h2><small id="pageSubtitle">Your company's document workspace</small></div><div class="user-actions"><div class="avatar" id="avatar">SA</div><div class="user-email" id="userEmail" style="font-size:11px;font-weight:750"></div><button class="btn" id="signOut">Sign out</button></div></header>
+ <section class="content" id="dashboardView"><div class="welcome"><div><h1>Good work starts here.</h1><p>Manage documents and survey reports in one place.</p></div><span class="status" id="roleBadge">Checking permissions</span></div>
+ <div class="cards"><div class="stat"><span class="label">All saved documents</span><strong id="totalCount">—</strong><small>Stored securely in Supabase</small></div><div class="stat"><span class="label">Invoices & quotations</span><strong id="invoiceCount">—</strong><small>Accessible to your account</small></div><div class="stat"><span class="label">Survey reports</span><strong id="surveyCount">—</strong><small>Accessible to your account</small></div><div class="stat"><span class="label">Your access</span><strong id="accessCount">—</strong><small>Invoices and survey reports enabled</small></div></div>
+ <div class="module-grid"><article class="module"><div class="module-icon">▤</div><h3>Invoice / Quotation</h3><p>Create and edit professional A4 invoices and quotations. Existing studio and flattened PDF workflow are preserved.</p><button class="btn primary" data-go="documents">Open documents →</button></article><article class="module"><div class="module-icon">⌖</div><h3>Survey Reports</h3><p>Prepare survey reports with coordinates, site boundaries, QR verification and A4 PDF output.</p><button class="btn primary" data-go="surveys">Open survey reports →</button></article></div>
+ <section class="panel"><div class="panel-head"><div><h3>Recent documents</h3><div class="hint">Latest saved company records</div></div><button class="btn subtle" id="refreshDocs">Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Document</th><th>Client</th><th>Type</th><th>Status</th><th>Updated</th></tr></thead><tbody id="recentRows"><tr><td colspan="5">Sign in to load your records.</td></tr></tbody></table></div></section>
+ </section>
+ <section class="content hidden" id="noAccessView"><div class="panel"><h3>No sections assigned</h3><p>Your account is active, but an administrator has not granted access to any website section yet. Contact your administrator.</p></div></section>
+ <section class="editor-wrap hidden" id="editorView"><iframe id="editorFrame" title="A4 document editor"></iframe></section>
+ <section class="content hidden" id="moduleView"><div class="welcome"><div><h1 id="moduleHeading">Business module</h1><p id="moduleDescription">Module access is permission-controlled.</p></div><span class="status">Access-controlled</span></div><section class="panel" id="modulePanel"><div class="panel-head"><div><h3 id="modulePanelTitle">Module workspace</h3><div class="hint" id="moduleStatus">Select a module.</div></div></div><div id="moduleWorkspace"></div></section></section>
+ <section class="content hidden" id="usersView"><div class="welcome"><div><h1>Employee management</h1><p>Invite employees, control navigation visibility, and deactivate access.</p></div></div><div id="usersNotice" aria-live="polite"></div><section class="panel"><div class="panel-head"><div><h3>Add employee</h3><div class="hint">An invitation is sent by a trusted Supabase Edge Function. Never enter or share an employee password.</div></div></div><form id="inviteForm" class="employee-form"><div class="field"><label for="inviteEmail">Employee email</label><input id="inviteEmail" type="email" required placeholder="employee@company.com"></div><div class="field"><label for="inviteName">Employee name</label><input id="inviteName" required maxlength="120" placeholder="Full name"></div><button class="btn primary" type="submit">Invite employee</button></form></section><section class="panel"><div class="panel-head"><div><h3>Employee access</h3><div class="hint">Choose visible navigation and edit rights. Hiding a menu is not the security boundary; database policies enforce access too.</div></div><button class="btn subtle" id="refreshUsers">Refresh team</button></div><div class="table-wrap"><table><thead><tr><th>Employee</th><th>Email</th><th>Role / Status</th><th>Dashboard</th><th>Invoices / Quotations</th><th>Survey reports</th><th>Business modules (Show / View / Edit)</th><th>Actions</th></tr></thead><tbody id="userRows"><tr><td colspan="8">Loading profiles…</td></tr></tbody></table></div></section></section>
+ </main>
+</section>
+<script>
+(() => {
+'use strict';
+const SUPABASE_URL = window.SAGT_SUPABASE_CONFIG?.url || '';
+const SUPABASE_ANON_KEY = window.SAGT_SUPABASE_CONFIG?.publishableKey || '';
+const supabaseConfigured = /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(SUPABASE_URL) && /^(sb_publishable_[A-Za-z0-9_-]+|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+)$/.test(SUPABASE_ANON_KEY);
+const supabaseLibraryReady = Boolean(window.supabase && typeof window.supabase.createClient === 'function');
+const sb = supabaseConfigured && supabaseLibraryReady ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }, global: { headers: { 'X-Client-Info': 'sagt-verify-web' } } }) : null;
+if (!supabaseConfigured || !supabaseLibraryReady) { const notice = document.getElementById('loginNotice'); if (notice) notice.textContent = !supabaseLibraryReady ? 'Supabase client library did not load. Check your internet connection or CDN availability.' : 'Supabase is not configured yet. Set the project URL and publishable key in supabase-config.js.'; if (notice) notice.className = 'notice error'; const form = document.getElementById('loginForm'); if (form) form.querySelector('button[type=submit]').disabled = true; }
+const $ = id => document.getElementById(id);
+let currentUser=null, profile=null, activeView='dashboard', lastPayload=null, savingCloud=false;
+const setNotice=(id,msg,type='')=>{const el=$(id);if(el)el.innerHTML=msg?`<div class="notice ${type}">${escapeHtml(msg)}</div>`:''};
+const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// UI permissions improve usability only; enforce the same rules with database RLS policies.
+const BUSINESS_MODULES = [
+ {key:'client_project_payments',view:'clientPayments',label:'Client & Project Payments',description:'Client payment tracking and project milestone payments.'},
+ {key:'attendance',view:'attendance',label:'Attendance',description:'Employee attendance records and corrections.'},
+ {key:'leave',view:'leave',label:'Leave',description:'Leave requests, approvals and balances.'},
+ {key:'holidays',view:'holidays',label:'Holidays',description:'Company holiday calendar and holiday administration.'},
+ {key:'flat_expense',view:'flatExpense',label:'Flat Expense',description:'Flat/property expenses such as rent, electricity and repairs.'},
+ {key:'office_expense',view:'officeExpense',label:'Office Expense',description:'Office operating expenses and receipts.'},
+ {key:'payroll',view:'payroll',label:'Payroll',description:'Payroll processing and salary administration.'},
+ {key:'payslip',view:'payslip',label:'Payslip',description:'Payslip viewing and distribution.'}
+];
+const canView=module=>Boolean(currentUser && profile && profile.is_active===true && (profile.role==='admin' || (module==='invoice'?profile.can_view_invoices:module==='survey'?profile.can_view_surveys:profile[`can_view_${module}`]===true)));
+const canEdit=module=>Boolean(currentUser && profile && profile.is_active===true && (profile.role==='admin' || (module==='invoice'?profile.can_edit_invoices:module==='survey'?profile.can_edit_surveys:profile[`can_edit_${module}`]===true)));
+const canNavigateModule=key=>Boolean(profile && profile.is_active===true && (profile.role==='admin' || (profile[`nav_${key}`]===true && canView(key))));
+function showLogin(){ $('loginView').classList.remove('hidden');$('appView').classList.add('hidden'); }
+function showApp(){ $('loginView').classList.add('hidden');$('appView').classList.remove('hidden'); }
+
+function renderBusinessModule(mod){
+ const canEditThis=canEdit(mod.key);
+ $('modulePanelTitle').textContent=mod.label;
+ $('moduleStatus').textContent=canEditThis?'You can submit or edit permitted records. Admin approval is required for leave and attendance corrections.':'View-only access.';
+ const workspace=$('moduleWorkspace');
+ if(mod.key==='leave'){
+   workspace.innerHTML=`<div id="leaveNotice" aria-live="polite"></div>${canEditThis?`<form id="leaveRequestForm" class="employee-form"><div class="field"><label for="leaveType">Leave type</label><select id="leaveType" required><option value="casual">Casual</option><option value="sick">Sick</option><option value="unpaid">Unpaid</option><option value="other">Other</option></select></div><div class="field"><label for="leaveStart">From</label><input id="leaveStart" type="date" required></div><div class="field"><label for="leaveEnd">To</label><input id="leaveEnd" type="date" required></div><div class="field"><label for="leaveReason">Reason</label><textarea id="leaveReason" maxlength="1000" required></textarea></div><button class="btn primary" type="submit">Submit leave request</button></form>`:''}<h3>Leave requests</h3><div class="table-wrap"><table><thead><tr><th>Dates</th><th>Type</th><th>Reason</th><th>Status</th>${profile.role==='admin'?'<th>Decision</th>':''}</tr></thead><tbody id="leaveRows"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>`;
+   loadLeaveRequests();
+ } else if(mod.key==='attendance'){
+   workspace.innerHTML=`<div id="attendanceNotice" aria-live="polite"></div><div class="cards"><div class="stat"><span class="label">Attendance</span><strong>Check-in / Check-out</strong><small>Recorded using server time</small></div></div>${canEditThis?`<div class="button-row"><button class="btn primary" id="checkInBtn">Check in</button><button class="btn" id="checkOutBtn">Check out</button></div><hr><h3>Forgotten attendance correction</h3><form id="attendanceCorrectionForm" class="employee-form"><div class="field"><label for="correctionDate">Attendance date</label><input id="correctionDate" type="date" required></div><div class="field"><label for="correctionKind">Correction type</label><select id="correctionKind"><option value="missed_check_in">Missed check-in</option><option value="missed_check_out">Missed check-out</option><option value="both">Both check-in and check-out</option></select></div><div class="field"><label for="correctionIn">Requested check-in time</label><input id="correctionIn" type="time"></div><div class="field"><label for="correctionOut">Requested check-out time</label><input id="correctionOut" type="time"></div><div class="field"><label for="correctionReason">Reason</label><textarea id="correctionReason" maxlength="1000" required></textarea></div><button class="btn primary" type="submit">Request correction</button></form>`:''}<h3>Attendance records</h3><div class="table-wrap"><table><thead><tr><th>Date</th><th>Check-in</th><th>Check-out</th><th>Status</th></tr></thead><tbody id="attendanceRows"><tr><td colspan="4">Loading…</td></tr></tbody></table></div><h3>Correction requests</h3><div class="table-wrap"><table><thead><tr><th>Date</th><th>Requested times</th><th>Reason</th><th>Status</th>${profile.role==='admin'?'<th>Decision</th>':''}</tr></thead><tbody id="correctionRows"><tr><td colspan="5">Loading…</td></tr></tbody></table></div>`;
+   if(canEditThis){$('checkInBtn')?.addEventListener('click',()=>recordAttendance('check_in'));$('checkOutBtn')?.addEventListener('click',()=>recordAttendance('check_out'));$('attendanceCorrectionForm')?.addEventListener('submit',submitAttendanceCorrection);}
+   loadAttendance();
+ } else if(mod.key==='payroll' || mod.key==='payslip'){
+   renderPayrollWorkspace(mod.key==='payroll');
+ } else if(mod.key==='flat_expense' || mod.key==='office_expense') {
+   renderExpenseWorkspace(mod.key, canEditThis);
+ } else if(mod.key==='holidays') {
+   renderHolidaysWorkspace(canEditThis);
+ } else if(mod.key==='client_project_payments') {
+   workspace.innerHTML=`<section class="legacy-panel"><h3>Clients &amp; Payments moved to the React workspace</h3><p>Open the React module for client accounts, projects, milestones, received payments, and balance tracking. The database setup must be installed by the project owner before this module can save records.</p><a class="btn primary" href="/">Open Clients &amp; Payments</a></section>`;
+ } else {
+   workspace.innerHTML=`<p>This module's workflow is not yet available.</p>`;
+ }
+}
+
+function renderExpenseWorkspace(moduleKey, editable){
+ const isFlat=moduleKey==='flat_expense';
+ const moduleLabel=isFlat?'Flat Expense':'Office Expense';
+ $('moduleStatus').textContent=editable?'Track records and create/edit your permitted pending expenses. Admin approval is required.':'Track expense records (read-only).';
+ $('moduleWorkspace').innerHTML=`<div id="expenseNotice" aria-live="polite"></div>${editable?`<form id="expenseForm" class="employee-form"><input type="hidden" id="expenseId"><div class="field"><label for="expenseCategory">Category</label><select id="expenseCategory" required>${(isFlat?['Rent / EMI','Electricity Bill','Construction Repairs','New Equipment','Other']:['PC & PC Accessories','Network & Accessories','CCTV & Accessories','Office Supplies','Internet / Telephone','Repairs & Maintenance','Travel','Other']).map(x=>`<option>${escapeHtml(x)}</option>`).join('')}</select></div><div class="field"><label for="expenseDate">Expense date</label><input id="expenseDate" type="date" required></div><div class="field"><label for="expenseAmount">Amount (₹)</label><input id="expenseAmount" type="number" min="0.01" step="0.01" required></div><div class="field"><label for="expenseDescription">Description</label><textarea id="expenseDescription" maxlength="1500" required></textarea></div><div class="field"><label for="expensePaymentMethod">Payment method</label><select id="expensePaymentMethod"><option value="">Not specified</option><option>Cash</option><option>UPI</option><option>Bank transfer</option><option>Card</option><option>Cheque</option></select></div><div class="field"><label for="expensePaymentStatus">Payment status</label><select id="expensePaymentStatus"><option value="unpaid">Unpaid</option><option value="paid">Paid</option></select></div><div class="field"><label for="expenseReceipt">Receipt / bill (optional)</label><input id="expenseReceipt" type="file" accept=".pdf,.jpg,.jpeg,.png" /></div><div class="button-row"><button class="btn primary" type="submit">Save expense</button><button class="btn" type="button" id="expenseReset">Clear</button></div><p class="hint">New records are submitted as pending. Only permitted pending records can be edited. Attachments require a configured private storage bucket.</p></form>`:''}<h3>${moduleLabel} records</h3><div class="table-wrap"><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th><th>Payment</th><th>Approval</th>${editable?'<th>Action</th>':''}</tr></thead><tbody id="expenseRows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>`;
+ if(editable){$('expenseDate').value=new Date().toISOString().slice(0,10);$('expenseForm').addEventListener('submit',saveExpense);$('expenseReset').addEventListener('click',resetExpenseForm);}
+ loadExpenses(moduleKey,editable);
+}
+function resetExpenseForm(){const f=$('expenseForm');if(!f)return;f.reset();$('expenseId').value='';$('expenseDate').value=new Date().toISOString().slice(0,10);}
+async function loadExpenses(moduleKey,editable){
+ const {data,error}=await sb.from('expense_records').select('id,submitted_by,expense_module,category,expense_date,amount,description,payment_method,payment_status,approval_status,receipt_path').eq('expense_module',moduleKey).order('expense_date',{ascending:false}).limit(250);
+ if(error){setNotice('expenseNotice','Could not load expenses: '+error.message,'error');return;}
+ const rows=data||[];const canEditRow=r=>editable&&r.submitted_by===currentUser.id&&r.approval_status==='pending';
+ $('expenseRows').innerHTML=rows.map(r=>`<tr><td>${escapeHtml(r.expense_date)}</td><td>${escapeHtml(r.category)}</td><td>${escapeHtml(r.description)}</td><td>${money(r.amount)}</td><td>${escapeHtml(r.payment_status)}${r.payment_method?' · '+escapeHtml(r.payment_method):''}</td><td>${escapeHtml(r.approval_status)}</td>${editable?`<td>${canEditRow(r)?`<button class="btn" data-expense-edit="${r.id}">Edit</button>`:'—'}</td>`:''}</tr>`).join('')||`<tr><td colspan="${editable?7:6}">No ${moduleKey==='flat_expense'?'flat':'office'} expenses found.</td></tr>`;
+ $('expenseRows').querySelectorAll('[data-expense-edit]').forEach(b=>b.addEventListener('click',()=>{const r=rows.find(x=>x.id===b.dataset.expenseEdit);if(!r)return;$('expenseId').value=r.id;$('expenseCategory').value=r.category;$('expenseDate').value=r.expense_date;$('expenseAmount').value=r.amount;$('expenseDescription').value=r.description;$('expensePaymentMethod').value=r.payment_method||'';$('expensePaymentStatus').value=r.payment_status; $('expenseForm').scrollIntoView({behavior:'smooth',block:'start'});}));
+}
+async function saveExpense(e){
+ e.preventDefault();const moduleKey=activeView==='flatExpense'?'flat_expense':'office_expense';const amount=Number($('expenseAmount').value);if(!Number.isFinite(amount)||amount<=0){setNotice('expenseNotice','Enter an amount greater than zero.','error');return;}
+ const id=$('expenseId').value;const payload={expense_module:moduleKey,category:$('expenseCategory').value,expense_date:$('expenseDate').value,amount,description:$('expenseDescription').value.trim(),payment_method:$('expensePaymentMethod').value||null,payment_status:$('expensePaymentStatus').value};
+ if(!payload.description||!payload.expense_date){setNotice('expenseNotice','Complete all required fields.','error');return;}
+ let result;if(id){result=await sb.from('expense_records').update(payload).eq('id',id).eq('submitted_by',currentUser.id).eq('approval_status','pending').select('id').maybeSingle();}else{payload.submitted_by=currentUser.id;payload.approval_status='pending';result=await sb.from('expense_records').insert(payload).select('id').single();}
+ if(result.error||!result.data){setNotice('expenseNotice','Save failed. Check your permission and try again. '+(result.error?.message||''),'error');return;}
+ const file=$('expenseReceipt').files?.[0];if(file){setNotice('expenseNotice','Expense saved, but receipt upload is not enabled until a private storage bucket and policies are configured.','error');}else{setNotice('expenseNotice',id?'Expense updated.':'Expense submitted for approval.','ok');}
+ resetExpenseForm();loadExpenses(moduleKey,true);
+}
+function renderHolidaysWorkspace(editable){
+ const admin=profile.role==='admin';$('moduleStatus').textContent=admin?'Track the company calendar and manage holidays.':'Track the company holiday calendar (read-only).';
+ $('moduleWorkspace').innerHTML=`<div id="holidayNotice" aria-live="polite"></div>${admin?`<form id="holidayForm" class="employee-form"><input id="holidayId" type="hidden"><div class="field"><label for="holidayDate">Holiday date</label><input id="holidayDate" type="date" required></div><div class="field"><label for="holidayName">Holiday name</label><input id="holidayName" maxlength="120" required></div><div class="button-row"><button class="btn primary" type="submit">Save holiday</button><button class="btn" type="button" id="holidayReset">Clear</button></div></form>`:''}<h3>Company holidays</h3><div class="table-wrap"><table><thead><tr><th>Date</th><th>Holiday</th>${admin?'<th>Action</th>':''}</tr></thead><tbody id="holidayRows"><tr><td colspan="3">Loading…</td></tr></tbody></table></div>`;
+ if(admin){$('holidayForm').addEventListener('submit',saveHoliday);$('holidayReset').addEventListener('click',resetHolidayForm);}
+ loadHolidays(admin);
+}
+function resetHolidayForm(){if(!$('holidayForm'))return;$('holidayForm').reset();$('holidayId').value='';}
+async function loadHolidays(admin){const {data,error}=await sb.from('company_holidays').select('id,holiday_date,name').order('holiday_date');if(error){setNotice('holidayNotice','Could not load holidays: '+error.message,'error');return;}const rows=data||[];$('holidayRows').innerHTML=rows.map(r=>`<tr><td>${escapeHtml(r.holiday_date)}</td><td>${escapeHtml(r.name)}</td>${admin?`<td><button class="btn" data-holiday-edit="${r.id}">Edit</button> <button class="btn danger" data-holiday-delete="${r.id}">Delete</button></td>`:''}</tr>`).join('')||`<tr><td colspan="${admin?3:2}">No holidays configured.</td></tr>`;if(admin){$('holidayRows').querySelectorAll('[data-holiday-edit]').forEach(b=>b.addEventListener('click',()=>{const r=rows.find(x=>x.id===b.dataset.holidayEdit);$('holidayId').value=r.id;$('holidayDate').value=r.holiday_date;$('holidayName').value=r.name;$('holidayForm').scrollIntoView({behavior:'smooth',block:'start'});}));$('holidayRows').querySelectorAll('[data-holiday-delete]').forEach(b=>b.addEventListener('click',async()=>{if(!confirm('Delete this holiday?'))return;const {error}=await sb.from('company_holidays').delete().eq('id',b.dataset.holidayDelete);if(error){setNotice('holidayNotice','Delete failed: '+error.message,'error');return;}setNotice('holidayNotice','Holiday deleted.','ok');loadHolidays(true);}));}}
+async function saveHoliday(e){e.preventDefault();const id=$('holidayId').value;const payload={holiday_date:$('holidayDate').value,name:$('holidayName').value.trim(),created_by:currentUser.id};if(!payload.holiday_date||!payload.name){setNotice('holidayNotice','Enter a date and holiday name.','error');return;}const result=id?await sb.from('company_holidays').update({holiday_date:payload.holiday_date,name:payload.name}).eq('id',id):await sb.from('company_holidays').insert(payload);if(result.error){setNotice('holidayNotice','Save failed: '+result.error.message,'error');return;}resetHolidayForm();setNotice('holidayNotice','Holiday saved.','ok');loadHolidays(true);}
+
+function currentPayrollMonthIndia(){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit'}).formatToParts(new Date());return `${parts.find(x=>x.type==='year')?.value}-${parts.find(x=>x.type==='month')?.value}`;}
+function previousPayrollMonth(){const [year,month]=currentPayrollMonthIndia().split('-').map(Number);const index=year*12+month-2;return `${Math.floor(index/12)}-${String(index%12+1).padStart(2,'0')}`;}
+function isCompletedPayrollMonth(value){return /^\d{4}-(0[1-9]|1[0-2])$/.test(value)&&value<currentPayrollMonthIndia();}
+function renderPayrollWorkspace(isAdminPayroll){
+ const admin=profile.role==='admin'; const month=previousPayrollMonth();
+ $('moduleStatus').textContent=admin?'Daily and monthly payroll calculations; employee salary settings are restricted to administrators.':'Your own daily attendance/payroll and monthly payslip only.';
+ $('moduleWorkspace').innerHTML=`<div id="payrollNotice" aria-live="polite"></div><div class="employee-form"><div class="field"><label for="payrollMonth">Payroll month</label><input id="payrollMonth" type="month" value="${month}" required></div><button class="btn primary" id="loadPayrollBtn">Load payroll</button>${admin&&isAdminPayroll?'<button class="btn" id="generatePayrollBtn">Calculate / regenerate draft</button> <button class="btn" id="finalizePayrollBtn">Finalize month</button>':''}</div><p class="hint">Daily calculations exclude Sundays and configured holidays. Full monthly salary is retained unless absence/unpaid leave or configured deductions apply. Pending attendance must be resolved before finalization.</p>${admin&&isAdminPayroll?'<h3>Employee salary settings</h3><div class="table-wrap"><table><thead><tr><th>Employee</th><th>Monthly salary (₹)</th><th>Fixed deduction (₹)</th><th>Additional pay (₹)</th><th>OT rate/hour (₹)</th><th>Advance repayment (₹)</th><th>Action</th></tr></thead><tbody id="salarySettingsRows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>':''}<h3>Monthly payroll</h3><div class="table-wrap"><table><thead><tr><th>Employee</th><th>Month</th><th>Working days</th><th>Payable days</th><th>Absence deduction</th><th>OT hours / pay</th><th>Gross (₹)</th><th>Net (₹)</th><th>Status / warnings</th></tr></thead><tbody id="payrollRows"><tr><td colspan="9">Loading…</td></tr></tbody></table></div><h3>Daily payroll details</h3><div class="table-wrap"><table><thead><tr><th>Date</th><th>Day</th><th>Attendance</th><th>Payable</th><th>OT hours</th><th>Deduction (₹)</th><th>Note</th></tr></thead><tbody id="payrollDailyRows"><tr><td colspan="7">Select a payroll month.</td></tr></tbody></table></div>`;
+ $('loadPayrollBtn').addEventListener('click',loadPayrollData);
+ if(admin&&isAdminPayroll){const monthInput=$('payrollMonth');const updateActions=()=>{const allowed=isCompletedPayrollMonth(monthInput.value);$('generatePayrollBtn').disabled=!allowed;$('finalizePayrollBtn').disabled=!allowed;if(!allowed)setNotice('payrollNotice','Payroll can only be calculated or finalized after the selected month ends in India time.','error');};monthInput.max=currentPayrollMonthIndia();monthInput.addEventListener('change',updateActions);updateActions();$('generatePayrollBtn').addEventListener('click',generatePayroll);$('finalizePayrollBtn').addEventListener('click',finalizePayroll);loadSalarySettings();}
+ loadPayrollData();
+}
+async function loadSalarySettings(){
+ const {data:people,error}=await sb.from('profiles').select('id,full_name,email,is_active').eq('role','employee').order('full_name');
+ if(error){setNotice('payrollNotice',error.message,'error');return}
+ const {data:settings,error:se}=await sb.from('employee_pay_settings').select('*');
+ if(se){setNotice('payrollNotice',se.message,'error');return}
+ const byId=Object.fromEntries((settings||[]).map(x=>[x.user_id,x]));
+ $('salarySettingsRows').innerHTML=(people||[]).map(p=>{const x=byId[p.id]||{};return `<tr data-salary-user="${p.id}"><td>${escapeHtml(p.full_name||p.email)}${p.is_active===false?' (inactive)':''}</td><td><input data-salary="monthly_salary" type="number" min="0" step="0.01" value="${Number(x.monthly_salary||0)}"></td><td><input data-salary="monthly_fixed_deduction" type="number" min="0" step="0.01" value="${Number(x.monthly_fixed_deduction||0)}"></td><td><input data-salary="monthly_additional_pay" type="number" min="0" step="0.01" value="${Number(x.monthly_additional_pay||0)}"></td><td><input data-salary="overtime_hourly_rate" type="number" min="0" step="0.01" value="${Number(x.overtime_hourly_rate||0)}"></td><td><input data-salary="advance_repayment_this_month" type="number" min="0" step="0.01" value="${Number(x.advance_repayment_this_month||0)}"></td><td><button class="btn primary saveSalary">Save</button></td></tr>`}).join('')||'<tr><td colspan="7">No employee profiles found.</td></tr>';
+ $('salarySettingsRows').querySelectorAll('.saveSalary').forEach(b=>b.addEventListener('click',async()=>{const tr=b.closest('tr');const vals=Object.fromEntries([...tr.querySelectorAll('[data-salary]')].map(i=>[i.dataset.salary,Number(i.value||0)]));if(Object.values(vals).some(v=>!Number.isFinite(v)||v<0)){setNotice('payrollNotice','Enter valid non-negative amounts.','error');return}const {error}=await sb.rpc('sagt_save_employee_pay_settings',{p_user_id:tr.dataset.salaryUser,p_monthly_salary:vals.monthly_salary,p_monthly_fixed_deduction:vals.monthly_fixed_deduction,p_monthly_additional_pay:vals.monthly_additional_pay,p_overtime_hourly_rate:vals.overtime_hourly_rate,p_advance_repayment_this_month:vals.advance_repayment_this_month});if(error){setNotice('payrollNotice',error.message,'error');return}setNotice('payrollNotice','Salary settings saved. Recalculate the month to apply changes.','ok')}));
+}
+async function loadPayrollData(){
+ const monthValue=$('payrollMonth')?.value;if(!monthValue)return;const monthDate=`${monthValue}-01`;
+ let query=sb.from('payroll_months').select('id,user_id,payroll_month,monthly_salary,working_days,payable_days,absence_deduction,fixed_deduction,overtime_hours,overtime_pay,additional_pay,advance_repayment,gross_pay,net_pay,pending_attendance_days,status').eq('payroll_month',monthDate).order('user_id');
+ const {data:rows,error}=await query;if(error){setNotice('payrollNotice',error.message,'error');return}
+ let names={};if(profile.role==='admin'){const {data:people}=await sb.from('profiles').select('id,full_name,email');names=Object.fromEntries((people||[]).map(p=>[p.id,p.full_name||p.email]));}
+ $('payrollRows').innerHTML=(rows||[]).map(r=>`<tr data-payroll-id="${r.id}" data-payroll-user="${r.user_id}"><td>${escapeHtml(names[r.user_id]||(r.user_id===currentUser.id?'My payroll':'Employee'))}</td><td>${escapeHtml(r.payroll_month)}</td><td>${r.working_days}</td><td>${Number(r.payable_days).toFixed(2)}</td><td>${money(r.absence_deduction)}</td><td>${Number(r.overtime_hours).toFixed(2)} / ${money(r.overtime_pay)}</td><td>${money(r.gross_pay)}</td><td><b>${money(r.net_pay)}</b></td><td>${escapeHtml(r.status)}${r.pending_attendance_days?` · ${r.pending_attendance_days} pending attendance day(s)`:''}</td></tr>`).join('')||'<tr><td colspan="9">No payroll calculated for this month yet. Admin can calculate a draft.</td></tr>';
+ $('payrollRows').querySelectorAll('tr[data-payroll-id]').forEach(tr=>tr.addEventListener('click',()=>loadPayrollDaily(tr.dataset.payrollUser,monthValue)));
+ if(rows?.length)loadPayrollDaily(profile.role==='admin'?rows[0].user_id:currentUser.id,monthValue);else $('payrollDailyRows').innerHTML='<tr><td colspan="7">No daily records.</td></tr>';
+}
+function money(v){return '₹'+Number(v||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});}
+async function loadPayrollDaily(userId,monthValue){const start=`${monthValue}-01`;const end=new Date(Number(monthValue.slice(0,4)),Number(monthValue.slice(5,7)),1).toISOString().slice(0,10);const {data,error}=await sb.from('payroll_daily').select('work_date,day_type,attendance_status,payable_fraction,overtime_hours,daily_deduction,note').eq('user_id',userId).gte('work_date',start).lt('work_date',end).order('work_date');if(error){setNotice('payrollNotice',error.message,'error');return}$('payrollDailyRows').innerHTML=(data||[]).map(r=>`<tr><td>${escapeHtml(r.work_date)}</td><td>${escapeHtml(r.day_type)}</td><td>${escapeHtml(r.attendance_status)}</td><td>${Number(r.payable_fraction).toFixed(2)}</td><td>${Number(r.overtime_hours).toFixed(2)}</td><td>${money(r.daily_deduction)}</td><td>${escapeHtml(r.note||'—')}</td></tr>`).join('')||'<tr><td colspan="7">No daily records for this employee and month.</td></tr>';}
+async function generatePayroll(){const month=$('payrollMonth').value;if(!isCompletedPayrollMonth(month)){setNotice('payrollNotice','Payroll can only be calculated after the selected month ends in India time.','error');return}const {data,error}=await sb.rpc('sagt_generate_monthly_payroll',{p_month:`${month}-01`});if(error){setNotice('payrollNotice',error.message,'error');return}setNotice('payrollNotice',`Draft payroll calculated for ${data.employees_processed} employee(s); working days: ${data.working_days}.`,'ok');loadPayrollData();}
+async function finalizePayroll(){const month=$('payrollMonth').value;if(!isCompletedPayrollMonth(month)){setNotice('payrollNotice','Payroll can only be finalized after the selected month ends in India time.','error');return}const {data,error}=await sb.rpc('sagt_finalize_monthly_payroll',{p_month:`${month}-01`});if(error){setNotice('payrollNotice',error.message,'error');return}setNotice('payrollNotice',`Finalized payroll for ${data.finalized_employees} employee(s). Finalized records are locked.`,'ok');loadPayrollData();}
+
+async function loadLeaveRequests(){
+ const {data,error}=await sb.from('leave_requests').select('id,user_id,leave_type,start_date,end_date,reason,status,admin_note,created_at').order('created_at',{ascending:false}).limit(100);
+ if(error){setNotice('leaveNotice',error.message,'error');return}
+ $('leaveRows').innerHTML=(data||[]).map(r=>`<tr><td>${escapeHtml(r.start_date)} – ${escapeHtml(r.end_date)}</td><td>${escapeHtml(r.leave_type)}</td><td>${escapeHtml(r.reason)}</td><td>${escapeHtml(r.status)}</td>${profile.role==='admin'?`<td>${r.status==='pending'?`<button class="btn primary" data-leave-decision="approved" data-id="${r.id}">Approve</button> <button class="btn danger" data-leave-decision="rejected" data-id="${r.id}">Reject</button>`:escapeHtml(r.admin_note||'—')}</td>`:''}</tr>`).join('')||'<tr><td colspan="5">No leave requests.</td></tr>';
+ $('leaveRows').querySelectorAll('[data-leave-decision]').forEach(b=>b.addEventListener('click',()=>decideRequest('leave_requests',b.dataset.id,b.dataset.leaveDecision,'leaveNotice',loadLeaveRequests)));
+}
+async function loadAttendance(){
+ const {data,error}=await sb.from('attendance_records').select('id,user_id,work_date,check_in,check_out,status').order('work_date',{ascending:false}).limit(100);
+ if(error){setNotice('attendanceNotice',error.message,'error');return}
+ $('attendanceRows').innerHTML=(data||[]).map(r=>`<tr><td>${escapeHtml(r.work_date)}</td><td>${r.check_in?escapeHtml(new Date(r.check_in).toLocaleTimeString()):'—'}</td><td>${r.check_out?escapeHtml(new Date(r.check_out).toLocaleTimeString()):'—'}</td><td>${escapeHtml(r.status)}</td></tr>`).join('')||'<tr><td colspan="4">No attendance records.</td></tr>';
+ const {data:corr,error:ce}=await sb.from('attendance_correction_requests').select('id,user_id,work_date,correction_type,requested_check_in,requested_check_out,reason,status,admin_note').order('created_at',{ascending:false}).limit(100);
+ if(ce){setNotice('attendanceNotice',ce.message,'error');return}
+ $('correctionRows').innerHTML=(corr||[]).map(r=>`<tr><td>${escapeHtml(r.work_date)}</td><td>${r.requested_check_in?escapeHtml(new Date(r.requested_check_in).toLocaleTimeString()):'—'} / ${r.requested_check_out?escapeHtml(new Date(r.requested_check_out).toLocaleTimeString()):'—'}</td><td>${escapeHtml(r.reason)}</td><td>${escapeHtml(r.status)}</td>${profile.role==='admin'?`<td>${r.status==='pending'?`<button class="btn primary" data-correction-decision="approved" data-id="${r.id}">Approve</button> <button class="btn danger" data-correction-decision="rejected" data-id="${r.id}">Reject</button>`:escapeHtml(r.admin_note||'—')}</td>`:''}</tr>`).join('')||'<tr><td colspan="5">No correction requests.</td></tr>';
+ $('correctionRows').querySelectorAll('[data-correction-decision]').forEach(b=>b.addEventListener('click',()=>decideRequest('attendance_correction_requests',b.dataset.id,b.dataset.correctionDecision,'attendanceNotice',loadAttendance)));
+}
+async function recordAttendance(action){
+ setNotice('attendanceNotice','', '');
+ const {data,error}=await sb.rpc(action==='check_in'?'sagt_attendance_check_in':'sagt_attendance_check_out');
+ if(error){setNotice('attendanceNotice',error.message,'error');return}
+ setNotice('attendanceNotice',action==='check_in'?'Check-in recorded.':'Check-out recorded.','ok');loadAttendance();
+}
+async function submitAttendanceCorrection(e){
+ e.preventDefault();const form=e.currentTarget;const date=$('correctionDate').value;const kind=$('correctionKind').value;const cin=$('correctionIn').value;const cout=$('correctionOut').value;const reason=$('correctionReason').value.trim();
+ if(!date||!reason){setNotice('attendanceNotice','Date and reason are required.','error');return}
+ const {error}=await sb.from('attendance_correction_requests').insert({user_id:currentUser.id,work_date:date,correction_type:kind,requested_check_in:cin?`${date}T${cin}:00+05:30`:null,requested_check_out:cout?`${date}T${cout}:00+05:30`:null,reason});
+ if(error){setNotice('attendanceNotice',error.message,'error');return}form.reset();setNotice('attendanceNotice','Correction request sent to the administrator.','ok');loadAttendance();
+}
+async function decideRequest(table,id,status,noticeId,reload){
+ const note=window.prompt('Optional decision note:')||null;
+ const {error}=await sb.rpc('sagt_decide_employee_request',{p_table:table,p_request_id:id,p_decision:status,p_admin_note:note});
+ if(error){setNotice(noticeId,error.message,'error');return}setNotice(noticeId,'Request '+status+'.','ok');reload();
+}
+function navTo(view){
+ if(view==='users'&&profile?.role!=='admin')return;
+ if(!profile || profile.is_active===false) return;
+ const businessModule = BUSINESS_MODULES.find(m=>m.view===view);
+ if(businessModule && !canNavigateModule(businessModule.key))return;
+ if(view==='dashboard'&&profile.role!=='admin'&&!profile.nav_dashboard){view=canView('invoice')?'documents':(canView('survey')?'surveys':(BUSINESS_MODULES.find(m=>canNavigateModule(m.key))?.view||'noaccess'));}
+ if(view==='documents'&&!canView('invoice'))return;
+ if(view==='surveys'&&!canView('survey'))return;
+ activeView=view;
+ ['dashboard','editor','users','noAccess','module'].forEach(k=>$(k+'View').classList.add('hidden'));
+ if(view==='noaccess'){$('noAccessView').classList.remove('hidden');activeView=view;document.querySelectorAll('#nav [data-view]').forEach(b=>b.classList.remove('active'));$('pageTitle').textContent='No access assigned';$('pageSubtitle').textContent='Contact your administrator';return;}
+ if(view==='dashboard')$('dashboardView').classList.remove('hidden');
+ else if(view==='users')$('usersView').classList.remove('hidden');
+ else if(businessModule){
+   $('moduleView').classList.remove('hidden');
+   $('moduleHeading').textContent=businessModule.label;
+   $('moduleDescription').textContent=businessModule.description;
+   renderBusinessModule(businessModule);
+ }
+ else { $('editorView').classList.remove('hidden'); const frame=$('editorFrame'); const target=view==='documents'?'invoice-editor.html':'survey-editor.html'; if(!frame.src.endsWith('/'+target))frame.src=target; frame.dataset.module=view==='documents'?'invoice':'survey'; }
+ document.querySelectorAll('#nav [data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+ $('pageTitle').textContent=({dashboard:'Dashboard',documents:'Invoice / Quotation',surveys:'Survey Reports',users:'Team permissions',...Object.fromEntries(BUSINESS_MODULES.map(m=>[m.view,m.label]))})[view]||'Dashboard';
+ $('pageSubtitle').textContent=({dashboard:'Your company document workspace',documents:'A4 invoice and quotation studio',surveys:'Professional survey report studio',users:'Admin-managed employee access',...Object.fromEntries(BUSINESS_MODULES.map(m=>[m.view,'Permission-controlled business module']))})[view]||'';
+}
+async function loadProfile(){
+ const {data,error}=await sb.from('profiles').select('*').eq('id',currentUser.id).maybeSingle();
+ if(error)throw error;
+ if(!data)throw new Error('Your profile is not ready or your account is inactive. Ask an administrator to check your account.');
+ if(typeof data.is_active !== 'boolean' || !['admin','employee'].includes(data.role)) throw new Error('Your profile is missing valid security settings. Contact your administrator.');
+ profile=data;
+ $('userEmail').textContent=currentUser.email||'Signed in';$('avatar').textContent=(data.full_name||currentUser.email||'SA').slice(0,2).toUpperCase();
+ $('sideUser').innerHTML=escapeHtml(data.full_name||currentUser.email||'Signed in')+'<span>'+escapeHtml(data.role==='admin'?'Administrator':'Employee')+'</span>';
+ $('roleBadge').textContent=data.role==='admin'?'Administrator': 'Restricted access';
+ if(data.is_active===false) throw new Error('This employee account is inactive. Contact your administrator.');
+ $('usersNav').classList.toggle('hidden',data.role!=='admin');
+ $('accessCount').textContent=String(data.role==='admin'?11:((data.nav_dashboard?1:0)+(canView('invoice')?1:0)+(canView('survey')?1:0)+BUSINESS_MODULES.filter(m=>canNavigateModule(m.key)).length))+' sections';
+ document.querySelector('[data-view="dashboard"]').classList.toggle('hidden',data.role!=='admin'&&!data.nav_dashboard);
+ document.querySelector('[data-view="documents"]').classList.toggle('hidden',!canView('invoice'));
+ document.querySelector('[data-view="surveys"]').classList.toggle('hidden',!canView('survey'));
+ BUSINESS_MODULES.forEach(m=>{const b=document.querySelector(`[data-module-nav="${m.key}"]`);if(b)b.classList.toggle('hidden',!canNavigateModule(m.key));});
+ document.querySelectorAll('[data-go="documents"]').forEach(b=>b.classList.toggle('hidden',!canView('invoice')));
+ document.querySelectorAll('[data-go="surveys"]').forEach(b=>b.classList.toggle('hidden',!canView('survey')));
+}
+async function refreshDocuments(){
+ const {data,error}=await sb.from('documents').select('id,module,title,document_number,status,client_name,updated_at').order('updated_at',{ascending:false}).limit(100);
+ if(error){setNotice('loginNotice',error.message,'error');return}
+ $('totalCount').textContent=data.length;$('invoiceCount').textContent=data.filter(d=>d.module!=='survey').length;$('surveyCount').textContent=data.filter(d=>d.module==='survey').length;
+ $('recentRows').innerHTML=data.slice(0,12).map(d=>`<tr><td><b>${escapeHtml(d.title||d.document_number||'Untitled')}</b><div class="hint">${escapeHtml(d.document_number||d.id.slice(0,8))}</div></td><td>${escapeHtml(d.client_name||'—')}</td><td>${escapeHtml(d.module)}</td><td><span class="status ${escapeHtml(d.status)}">${escapeHtml(d.status)}</span></td><td>${new Date(d.updated_at).toLocaleDateString()}</td></tr>`).join('')||'<tr><td colspan="5">No documents saved yet.</td></tr>';
+}
+async function refreshUsers(){
+ if(profile?.role!=='admin')return;
+ const {data,error}=await sb.from('profiles').select('*').order('created_at',{ascending:true});
+ if(error){setNotice('usersNotice',error.message,'error');return}
+ $('userRows').innerHTML=data.map(p=>`<tr data-id="${p.id}"><td><input class="nameInput" aria-label="Employee name" value="${escapeHtml(p.full_name)}" maxlength="120" style="min-width:120px"></td><td><span class="hint">${escapeHtml(p.email||p.id)}</span></td><td><span class="status">${escapeHtml(p.role)} · ${p.is_active===false?'Inactive':'Active'}</span></td><td><label class="checkrow"><input type="checkbox" data-k="nav_dashboard" ${p.nav_dashboard?'checked':''} ${p.role==='admin'?'disabled':''}> Show</label></td><td><label class="checkrow"><input type="checkbox" data-k="can_view_invoices" ${p.can_view_invoices?'checked':''} ${p.role==='admin'?'disabled':''}> View</label><label class="checkrow"><input type="checkbox" data-k="can_edit_invoices" ${p.can_edit_invoices?'checked':''} ${p.role==='admin'?'disabled':''}> Edit</label></td><td><label class="checkrow"><input type="checkbox" data-k="can_view_surveys" ${p.can_view_surveys?'checked':''} ${p.role==='admin'?'disabled':''}> View</label><label class="checkrow"><input type="checkbox" data-k="can_edit_surveys" ${p.can_edit_surveys?'checked':''} ${p.role==='admin'?'disabled':''}> Edit</label></td><td><div class="module-permission-grid">${BUSINESS_MODULES.map(m=>`<fieldset class="module-permission"><legend>${escapeHtml(m.label)}</legend><label class="checkrow"><input type="checkbox" data-k="nav_${m.key}" ${p[`nav_${m.key}`]?'checked':''} ${(p.role==='admin'||m.key==='payroll')?'disabled':''}> Show</label><label class="checkrow"><input type="checkbox" data-k="can_view_${m.key}" ${p[`can_view_${m.key}`]?'checked':''} ${(p.role==='admin'||m.key==='payroll')?'disabled':''}> View</label><label class="checkrow"><input type="checkbox" data-k="can_edit_${m.key}" ${p[`can_edit_${m.key}`]?'checked':''} ${(p.role==='admin'||m.key==='payroll')?'disabled':''}> Edit</label></fieldset>`).join('')}</div></td><td><button class="btn primary savePerm">Save</button> ${p.id===currentUser.id?'<span class="hint">You</span>':`<button class="btn ${p.is_active===false?'subtle':'danger'} toggleActive" data-active="${p.is_active===false?'true':'false'}">${p.is_active===false?'Reactivate':'Deactivate'}</button>`}</td></tr>`).join('')||'<tr><td colspan="8">No profiles found.</td></tr>';
+}
+async function savePermissions(row){
+ const id=row.dataset.id;const payload={full_name:row.querySelector('.nameInput').value.trim()};
+ row.querySelectorAll('input[type=checkbox][data-k]').forEach(c=>payload[c.dataset.k]=c.checked);
+ if(payload.can_edit_invoices)payload.can_view_invoices=true;if(payload.can_edit_surveys)payload.can_view_surveys=true;
+ BUSINESS_MODULES.forEach(m=>{
+   if(payload[`can_edit_${m.key}`])payload[`can_view_${m.key}`]=true;
+   if(payload[`can_view_${m.key}`])payload[`nav_${m.key}`]=true;
+   // Payroll remains restricted to administrator role in this two-role profile model.
+   if(m.key==='payroll'){payload[`nav_${m.key}`]=false;payload[`can_view_${m.key}`]=false;payload[`can_edit_${m.key}`]=false;}
+
+ });
+ if(!payload.full_name){setNotice('usersNotice','Employee name is required.','error');return}
+ const {error}=await sb.from('profiles').update(payload).eq('id',id);
+ if(error){setNotice('usersNotice',error.message,'error');return}
+ setNotice('usersNotice','Employee permissions updated.','ok');await refreshUsers();
+}
+async function adminEmployeeAction(body){
+ const {data,error}=await sb.functions.invoke('admin-employee-management',{body});
+ if(error)throw error;
+ if(data?.error)throw new Error(data.error);
+ return data;
+}
+const inviteForm = $('inviteForm');
+inviteForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = inviteForm; // Stable form reference remains valid after async work.
+  if (profile?.role !== 'admin') return;
+
+  const email = $('inviteEmail').value.trim().toLowerCase();
+  const full_name = $('inviteName').value.trim();
+  if (!email || !full_name) return;
+
+  const submit = form.querySelector('button[type="submit"]');
+  if (submit) submit.disabled = true;
+  try {
+    await adminEmployeeAction({ action: 'invite', email, full_name });
+    setNotice('usersNotice', 'Invitation requested for ' + email + '. Check Supabase function logs and the employee email inbox.', 'ok');
+    form.reset();
+    await refreshUsers();
+  } catch (err) {
+    setNotice('usersNotice', 'Invite failed: ' + (err?.message || 'Check Edge Function deployment and permissions.'), 'error');
+  } finally {
+    if (submit) submit.disabled = false;
+  }
+});
+
+async function toggleEmployee(row,active){
+ if(profile?.role!=='admin')return;
+ const id=row.dataset.id;
+ if(id===currentUser.id){setNotice('usersNotice','You cannot deactivate your own administrator account.','error');return}
+ if(!confirm(active?'Reactivate this employee account?':'Deactivate this employee and revoke their access?'))return;
+ try{await adminEmployeeAction({action:active?'reactivate':'deactivate',user_id:id});setNotice('usersNotice',active?'Employee reactivated.':'Employee deactivated and access revoked.','ok');await refreshUsers()}
+ catch(err){setNotice('usersNotice','Action failed: '+(err.message||'Check Edge Function deployment and logs.'),'error')}
+}
+async function persistEditor(module,payload){
+ if(!currentUser||!canEdit(module)||savingCloud)return;
+ savingCloud=true;
+ try{
+  const title=module==='survey'?'Survey Report':(payload.title||payload.type||'Invoice / Quotation');
+  const number=payload.number||payload.data?.documentNo||payload.data?.reportNo||null;
+  const client=payload.client||payload.customer||payload.data?.applicant||'';
+  const status='draft';
+  const {error}=await sb.from('documents').insert({module:module==='survey'?'survey':(payload.type==='quotation'?'quotation':'invoice'),title:String(title).slice(0,240),document_number:number?String(number).slice(0,100):null,status,client_name:String(client).slice(0,240),content:payload,created_by:currentUser.id,updated_by:currentUser.id});
+  if(error)throw error;
+  await refreshDocuments();
+ }catch(e){console.error(e);setNotice('loginNotice','Cloud save failed: '+(e.message||'Check your access permissions.'),'error')}
+ finally{savingCloud=false}
+}
+$('loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!sb){setNotice('loginNotice','Supabase is not configured.','error');return;}setNotice('loginNotice','');const {data,error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error){setNotice('loginNotice','Sign-in failed. Check your email and password, then try again.','error');return}currentUser=data.user;try{await loadProfile();showApp();navTo(profile.role==='admin'||profile.nav_dashboard?'dashboard':(canView('invoice')?'documents':'surveys'));await refreshDocuments()}catch(err){await sb.auth.signOut();currentUser=null;profile=null;setNotice('loginNotice',err.message||'Unable to load your profile.','error')}});
+$('signOut').addEventListener('click',async()=>{if(sb) await sb.auth.signOut();currentUser=null;profile=null;activeView='dashboard';$('editorFrame').src='about:blank';showLogin()});
+sb?.auth.onAuthStateChange((event, session)=>{ if(event==='SIGNED_OUT'||!session){currentUser=null;profile=null;activeView='dashboard';$('editorFrame').src='about:blank';showLogin();} });
+// Refresh the profile on tab focus so deactivation/permission changes are picked up promptly.
+document.addEventListener('visibilitychange', async()=>{ if(document.visibilityState==='visible' && sb && currentUser){ try { await loadProfile(); if(activeView==='documents'&&!canView('invoice')) navTo('noaccess'); else if(activeView==='surveys'&&!canView('survey')) navTo('noaccess'); else if(activeView==='users'&&profile.role!=='admin') navTo('noaccess'); } catch { await sb.auth.signOut(); currentUser=null; profile=null; $('editorFrame').src='about:blank'; showLogin(); } } });
+$('nav').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)navTo(b.dataset.view)});
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>navTo(b.dataset.go)));
+$('refreshDocs').addEventListener('click',refreshDocuments);$('refreshUsers').addEventListener('click',refreshUsers);
+$('userRows').addEventListener('click',e=>{const row=e.target.closest('tr');if(!row)return;const b=e.target.closest('.savePerm');if(b)savePermissions(row);const t=e.target.closest('.toggleActive');if(t)toggleEmployee(row,t.dataset.active==='true')});
+window.addEventListener('message',e=>{
+ if(e.origin!==location.origin||e.source!==$('editorFrame').contentWindow)return;
+ if(e.data?.type==='SAGT_EDITOR_SAVE'&&['invoice','survey'].includes(e.data.module))persistEditor(e.data.module,e.data.payload);
+});
+(async()=>{if(!supabaseConfigured||!supabaseLibraryReady||!sb)return;const {data}=await sb.auth.getSession();if(data.session){currentUser=data.session.user;try{await loadProfile();showApp();navTo(profile.role==='admin'||profile.nav_dashboard?'dashboard':(canView('invoice')?'documents':'surveys'));await refreshDocuments()}catch(_){await sb.auth.signOut();showLogin()}}})();
+})();
+</script></body></html>

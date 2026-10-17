@@ -1,0 +1,3 @@
+-- No schema change is needed for the first version of the expense and holiday UI.
+-- Existing public.expense_records and public.company_holidays tables are used.
+-- The expense select policy is hardened in 012_expense_record_confidentiality.sql.
